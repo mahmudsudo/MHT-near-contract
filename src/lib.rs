@@ -44,8 +44,8 @@ impl Contract {
             total_supply,
             FungibleTokenMetadata {
                 spec: FT_METADATA_SPEC.to_string(),
-                name: "wale token".to_string(),
-                symbol: "WAL".to_string(),
+                name: "Mahmudsudo token".to_string(),
+                symbol: "MHT".to_string(),
                 icon: Some(DATA_IMAGE_SVG_NEAR_ICON.to_string()),
                 reference: None,
                 reference_hash: None,
@@ -125,22 +125,22 @@ impl Contract {
     #[payable]
     pub fn tranfer_money (&mut self, reciever: AccountId, amount: U128, memo: Option<String>) -> U128 {
         assert_one_yocto();
-        let sender = env::predecessor_account_id();
+        let _sender = env::predecessor_account_id();
 
-        if let Some(user) = self.token.accounts.get(&reciever) {
+        if let Some(_user) = self.token.accounts.get(&reciever) {
 
             self.token.ft_transfer(reciever, amount, memo);
 
-            amount
+           return amount;
             
-        }else{
+        }
 
             self.token.internal_register_account(&reciever);
 
             self.token.ft_transfer(reciever, amount, memo);
 
-            amount
-        }
+           return  amount;
+        
     }
 }
 
@@ -236,7 +236,7 @@ mod tests {
             .attached_deposit(contract.storage_balance_bounds().min.into())
             .predecessor_account_id(accounts(5))
             .build());
-        // Paying for account registration, aka storage deposit
+        // Paying for account registration and  storage deposit
         contract.storage_deposit(None, None);
 
         testing_env!(context

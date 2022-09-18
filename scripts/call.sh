@@ -3,22 +3,22 @@
 
 #first default
 
-#near call fungiblestokens.akinyemisaheedwale2.testnet new_default_meta '{"owner_id": "akinyemisaheedwale2.testnet", "total_supply": "30"}' --accountId akinyemisaheedwale2.testnet 
+near call fungibletoken.mahmudnear.testnet new_default_meta '{"owner_id": "mahmudnear.testnet", "total_supply": "30"}' --accountId mahmudnear.testnet 
 
 
 #view account
 
-#near view fungiblestokens.akinyemisaheedwale2.testnet ft_balance_of '{"account_id": "fungiblestokens.akinyemisaheedwale2.testnet"}'
+near view fungibletoken.mahmudnear.testnet ft_balance_of '{"account_id": "fungibletoken.mahmudnear.testnet"}'
 
 
 #tranfer money
 
-#near call fungiblestokens.akinyemisaheedwale2.testnet tranfer_money '{"reciever": "fungiblestokens.akinyemisaheedwale2.testnet", "amount": "10"}' --accountId akinyemisaheedwale2.testnet --amount 0.000000000000000000000001
+near call fungibletoken.mahmudnear.testnet tranfer_money '{"reciever": "fungibletoken.mahmudnear.testnet", "amount": "10"}' --accountId mahmudnear.testnet --amount 0.000000000000000000000001
 
 #mint
 
-near call fungiblestokens.akinyemisaheedwale2.testnet mint '{"amount": 70000000000000000}' --accountId fungiblestokens.akinyemisaheedwale3.testnet
+near call fungibletoken.mahmudnear.testnet mint '{"amount": 70000000000000000}' --accountId fungibletoken.mahmudnear.testnet
 
 
 #burn
-#near call fungiblestokens.akinyemisaheedwale2.testnet burn '{"amount": 5}' --accountId akinyemisaheedwale2.testnet
+near call fungibletoken.mahmudnear.testnet burn '{"amount": 5}' --accountId mahmudnear.testnet
